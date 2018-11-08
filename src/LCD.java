@@ -14,7 +14,7 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     public static void main(String args[]) {
         LCD.init();
-        LCD.write('b');
+        LCD.write("Bruno");
     }
 
     // Escreve um byte de comando/dados no LCD
@@ -66,7 +66,9 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     // Escreve uma string na posição corrente.
     public static void write(String txt) {
-
+        for (char c : txt.toCharArray()) {
+            LCD.write(c);
+        }
     }
 
     // Envia comando para posicionar cursor (‘lin’:0..LINES-1 , ‘col’:0..COLS-1)
