@@ -22,15 +22,18 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
         LCD.writeNSR(data);
         HAL.writeBits(ENABLE, 0xff);
         HAL.writeBits(ENABLE, 0);
+        Time.sleep(500);
     }
 
     private static void writeNSR(int data) {
         HAL.writeBits(LSB, data);
         HAL.writeBits(SHIFT, 1);
         HAL.writeBits(SHIFT, 0);
+        Time.sleep(500);
         HAL.writeBits(LSB, data);
         HAL.writeBits(SHIFT, 1);
         HAL.writeBits(SHIFT, 0);
+        Time.sleep(500);
     }
 
     // Escreve um comando no LCD
