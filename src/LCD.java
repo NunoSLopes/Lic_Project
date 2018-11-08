@@ -5,6 +5,9 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     private static final int LINES = 2, COLS = 16; // Dimensão do display.
 
+    private static final int[][] position = new int [LINES][COLS];
+
+
     private static final int LSB = 0x0F;
     private static final int MSB = 0xF0;
 
@@ -30,12 +33,16 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
     // Envia a sequência de iniciação para comunicação a 4 bits.
     public static void init() {
         Time.sleep(15);
-        writeByte(true, 0x30);
+        HAL.writeBits(0xff, 0x30);
+        HAL.writeBits(0xff, 0x30);
         Time.sleep(5);
-        writeByte(true, 0x30);
+        HAL.writeBits(0xff, 0x30);
         Time.sleep(1);
-        writeByte(true, 0x30);
-        writeByte(true, 0x20);
+        HAL.writeBits(0xff, 0x30);
+        HAL.writeBits(0xff, 0x38);
+        HAL.writeBits(0xff, 0x08);
+        HAL.writeBits(0xff, 0x01);
+        HAL.writeBits(0xff, 0x05);
     }
 
     // Escreve um caráter na posição corrente.
