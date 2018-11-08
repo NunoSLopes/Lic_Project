@@ -3,51 +3,65 @@ import isel.leic.utils.Time;
 
 public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
-    private static final int LINES = 2, COLS = 16; // Dimensão do display.
-
+    private static final int LINES = 2, COLS = 16;// Dimensão do display.
     private static final int[][] position = new int [LINES][COLS];
 
-
+    private static final int ENABLE = 0x40;
+    private static final int RS = 0x20;
+    private static final int SHIFT = 0x01;
     private static final int LSB = 0x0F;
     private static final int MSB = 0xF0;
 
+    public static void main(String args[]) {
+        LCD.init();
+        LCD.write('b');
+    }
+
     // Escreve um byte de comando/dados no LCD
     private static void writeByte(boolean rs, int data) {
-        if (rs) {
-            HAL.writeBits(MSB, data);
-            Time.sleep(10);
-            HAL.writeBits(LSB, data);
-        }
+        HAL.writeBits(RS, rs ? 1 : 0);
+        LCD.writeNSR(data);
+        HAL.writeBits(ENABLE, 1);
+        HAL.writeBits(ENABLE, 0);
+    }
+
+    private static void writeNSR(int data) {
+        HAL.writeBits(MSB, data);
+        HAL.writeBits(SHIFT, 1);
+        HAL.writeBits(SHIFT, 0);
+        HAL.writeBits(LSB, data);
+        HAL.writeBits(SHIFT, 1);
+        HAL.writeBits(SHIFT, 0);
     }
 
     // Escreve um comando no LCD
     private static void writeCMD(int data) {
-
+        LCD.writeByte(false, data);
     }
 
     // Escreve um dado no LCD
     private static void writeDATA(int data) {
-
+        LCD.writeByte(true, data);
     }
 
     // Envia a sequência de iniciação para comunicação a 4 bits.
     public static void init() {
         Time.sleep(15);
-        HAL.writeBits(0xff, 0x30);
-        HAL.writeBits(0xff, 0x30);
+        LCD.writeCMD(0x30);
         Time.sleep(5);
-        HAL.writeBits(0xff, 0x30);
+        LCD.writeCMD(0x30);
         Time.sleep(1);
-        HAL.writeBits(0xff, 0x30);
-        HAL.writeBits(0xff, 0x38);
-        HAL.writeBits(0xff, 0x08);
-        HAL.writeBits(0xff, 0x01);
-        HAL.writeBits(0xff, 0x05);
+        LCD.writeCMD(0x30);
+        LCD.writeCMD(0x38);
+        LCD.writeCMD(0x08);
+        LCD.writeCMD(0x01);
+        LCD.writeCMD(0x05);
+        LCD.writeCMD(0x0F);
     }
 
     // Escreve um caráter na posição corrente.
     public static void write(char c) {
-
+        LCD.writeDATA(c);
     }
 
     // Escreve uma string na posição corrente.
