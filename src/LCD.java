@@ -13,27 +13,25 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     public static void main(String args[]) {
         LCD.init();
-        LCD.write("Bruno");
+        LCD.write("Cambada de Burros");
     }
 
     // Escreve um byte de comando/dados no LCD
     private static void writeByte(boolean rs, int data) {
-        HAL.writeBits(RS, rs ? 1 : 0);
+        HAL.writeBits(RS, rs ? RS : 0);
         LCD.writeNSR(data);
         HAL.writeBits(ENABLE, 0xff);
         HAL.writeBits(ENABLE, 0);
-        Time.sleep(500);
+        Time.sleep(1);
     }
 
     private static void writeNSR(int data) {
+        HAL.writeBits(LSB, data>>4);
+        HAL.setBits(SHIFT);
+        HAL.clrBits(SHIFT);
         HAL.writeBits(LSB, data);
-        HAL.writeBits(SHIFT, 1);
-        HAL.writeBits(SHIFT, 0);
-        Time.sleep(500);
-        HAL.writeBits(LSB, data);
-        HAL.writeBits(SHIFT, 1);
-        HAL.writeBits(SHIFT, 0);
-        Time.sleep(500);
+        HAL.setBits(SHIFT);
+        HAL.clrBits(SHIFT);
     }
 
     // Escreve um comando no LCD
@@ -57,8 +55,9 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
         LCD.writeCMD(0x38);
         LCD.writeCMD(0x08);
         LCD.writeCMD(0x01);
-        LCD.writeCMD(0x05);
+        LCD.writeCMD(0x06);
         LCD.writeCMD(0x0F);
+        System.out.println("acabou Inicializar");
     }
 
     // Escreve um caráter na posição corrente.

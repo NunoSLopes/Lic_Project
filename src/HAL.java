@@ -1,4 +1,5 @@
 import isel.leic.UsbPort;
+import isel.leic.utils.Time;
 
 public class HAL { // Virtualiza o acesso ao sistema UsbPort
 
@@ -23,7 +24,7 @@ public class HAL { // Virtualiza o acesso ao sistema UsbPort
 
     // Escreve nos bits representados por mask o valor de value
     public static int writeBits(int mask, int value){
-        output = (mask & value) + (~mask & output);
+        output = (mask & value) | (~mask & output);
         UsbPort.out(output);
         return output;
     }
