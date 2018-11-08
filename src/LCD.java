@@ -8,9 +8,8 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     private static final int ENABLE = 0x40;
     private static final int RS = 0x20;
-    private static final int SHIFT = 0x01;
+    private static final int SHIFT = 0x10;
     private static final int LSB = 0x0F;
-    private static final int MSB = 0xF0;
 
     public static void main(String args[]) {
         LCD.init();
@@ -21,12 +20,12 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
     private static void writeByte(boolean rs, int data) {
         HAL.writeBits(RS, rs ? 1 : 0);
         LCD.writeNSR(data);
-        HAL.writeBits(ENABLE, 1);
+        HAL.writeBits(ENABLE, 0xff);
         HAL.writeBits(ENABLE, 0);
     }
 
     private static void writeNSR(int data) {
-        HAL.writeBits(MSB, data);
+        HAL.writeBits(LSB, data);
         HAL.writeBits(SHIFT, 1);
         HAL.writeBits(SHIFT, 0);
         HAL.writeBits(LSB, data);
