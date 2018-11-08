@@ -1,10 +1,20 @@
+import isel.leic.UsbPort;
+import isel.leic.utils.Time;
+
 public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     private static final int LINES = 2, COLS = 16; // Dimensão do display.
 
+    private static final int LSB = 0x0F;
+    private static final int MSB = 0xF0;
+
     // Escreve um byte de comando/dados no LCD
     private static void writeByte(boolean rs, int data) {
-
+        if (rs) {
+            HAL.writeBits(MSB, data);
+            Time.sleep(10);
+            HAL.writeBits(LSB, data);
+        }
     }
 
     // Escreve um comando no LCD
@@ -19,7 +29,13 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     // Envia a sequência de iniciação para comunicação a 4 bits.
     public static void init() {
-
+        Time.sleep(15);
+        writeByte(true, 0x30);
+        Time.sleep(5);
+        writeByte(true, 0x30);
+        Time.sleep(1);
+        writeByte(true, 0x30);
+        writeByte(true, 0x20);
     }
 
     // Escreve um caráter na posição corrente.
