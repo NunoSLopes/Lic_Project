@@ -1,4 +1,3 @@
-import isel.leic.UsbPort;
 import isel.leic.utils.Time;
 
 public class LCD { // Escreve no LCD usando a interface a 4 bits.
@@ -10,6 +9,7 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
     private static final int RS = 0x20;
     private static final int SHIFT = 0x10;
     private static final int LSB = 0x0F;
+    private static final int CLR_DISPLAY = 0x01;
 
     public static void main(String args[]) {
         LCD.init();
@@ -44,7 +44,7 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
         LCD.writeByte(true, data);
     }
 
-    // Envia a sequência de iniciação para comunicação a 4 bits.
+    // Envia a sequência de iniciação para comunicação a 8 bits.
     public static void init() {
         Time.sleep(15);
         LCD.writeCMD(0x30);
@@ -74,12 +74,14 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     // Envia comando para posicionar cursor (‘lin’:0..LINES-1 , ‘col’:0..COLS-1)
     public static void cursor(int lin, int col) {
-
+        int cod = 1<<7;
+        cod += (lin == 0 ? 0x00 : 0x40) + col;
+        writeCMD(cod);
     }
 
     // Envia comando para limpar o ecrã e posicionar o cursor em (0,0)
     public static void clear() {
-
+        writeCMD(CLR_DISPLAY);
     }
 }
 
