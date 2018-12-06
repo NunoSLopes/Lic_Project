@@ -32,7 +32,10 @@ public class SerialEmitter {
 
 
         if (addr == Destination.Dispenser) HAL.clrBits(SDX);
-        else HAL.setBits(SDX);
+        else {
+            ++parity;
+            HAL.setBits(SDX);
+        }
 
         HAL.setBits(SCLK);
 
@@ -49,7 +52,7 @@ public class SerialEmitter {
             HAL.setBits(SCLK);
         }
 
-        if (parity % 2 == 0) HAL.clrBits(SDX);
+        if (parity % 2 != 0) HAL.clrBits(SDX);
         else {
             HAL.setBits(SDX);
         }
@@ -70,10 +73,8 @@ public class SerialEmitter {
     }
 
     private static void start() {
-        HAL.setBits(SDX);
         HAL.clrBits(SCLK);
-        Time.sleep(1);
+        HAL.setBits(SDX);
         HAL.clrBits(SDX);
-        Time.sleep(1);
     }
 }

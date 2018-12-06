@@ -11,6 +11,8 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
     private static final int CLR_DISPLAY = 0x01;
 
     public static void main(String args[]) {
+        HAL.init();
+        SerialEmitter.init();
         LCD.init();
         LCD.write("Cambada de Burros");
         Time.sleep(5000);
