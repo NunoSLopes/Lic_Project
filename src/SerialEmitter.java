@@ -49,10 +49,9 @@ public class SerialEmitter {
             HAL.setBits(SCLK);
         }
 
-        if (parity % 2 == 0) HAL.setBits(SDX);
+        if (parity % 2 == 0) HAL.clrBits(SDX);
         else {
-            System.out.println("falhou");
-            HAL.clrBits(SDX);
+            HAL.setBits(SDX);
         }
 
         Time.sleep(1);

@@ -19,8 +19,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="org.mockito:mockito-core:2.2.7" level="project" />
-    <orderEntry type="library" name="org.powermock:powermock-api-mockito:1.6.2" level="project" />
-    <orderEntry type="library" name="org.powermock:powermock-module-junit4:1.6.2" level="project" />
+    <orderEntry type="library" name="junit:junit:4.12" level="project" />
   </component>
 </module>
