@@ -1,5 +1,4 @@
 import isel.leic.UsbPort;
-import isel.leic.utils.Time;
 
 public class HAL { // Virtualiza o acesso ao sistema UsbPort
 

@@ -1,4 +1,3 @@
-import isel.leic.UsbPort;
 import isel.leic.utils.Time;
 
 public class KBD {

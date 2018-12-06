@@ -12,6 +12,12 @@ public class SerialEmitter {
         LCD
     }
 
+    public static void main(String[] args) {
+        HAL.init();
+        init();
+        send(Destination.Dispenser,5);
+    }
+
 
 
     // Inicia a classe
@@ -31,8 +37,8 @@ public class SerialEmitter {
         int parity = 0;
 
 
-        if (addr == Destination.Dispenser) HAL.clrBits(SDX);
-        else {
+        if (addr == Destination.Dispenser)  HAL.clrBits(SDX);
+        else  {
             ++parity;
             HAL.setBits(SDX);
         }
