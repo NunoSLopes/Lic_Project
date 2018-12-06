@@ -3,23 +3,29 @@ import isel.leic.utils.Time;
 // Envia tramas para os diferentes módulos Serial Receiver.
 public class SerialEmitter {
 
-    private static int SDX = 0x00;  //inport
-    private static int SCLK = 0x00; //inport
-    private static int BUSY = 0x00; //outport
+    private static int SDX = 0x02;  //inport
+    private static int SCLK = 0x01; //inport
+    private static int BUSY = 0x01; //outport
 
     public enum Destination {
         Dispenser,
         LCD
-    };
+    }
+
+
 
     // Inicia a classe
     public static void init() {
+
+        HAL.clrBits(SCLK);
+        HAL.setBits(SDX);
+
 
     }
 
     // Envia uma trama para o SerialReceiver identificado o destino em addr e os bits de dados em ‘data’.
     public static void send(Destination addr, int data) {
-        //if (isBusy()) return;
+        //while (isBusy());
         start();
         int size = (addr == Destination.Dispenser ? 6 : 11 );
         int parity = 0;
@@ -30,7 +36,7 @@ public class SerialEmitter {
 
         HAL.setBits(SCLK);
 
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size - 2; i++) {
             int bit = data & (0x01<<i);
             if(bit>0 ) {
                 HAL.setBits(SDX);
@@ -44,7 +50,10 @@ public class SerialEmitter {
         }
 
         if (parity % 2 == 0) HAL.setBits(SDX);
-        else HAL.clrBits(SDX);
+        else {
+            System.out.println("falhou");
+            HAL.clrBits(SDX);
+        }
 
         Time.sleep(1);
         HAL.clrBits(SCLK);
@@ -62,9 +71,10 @@ public class SerialEmitter {
     }
 
     private static void start() {
-        HAL.writeBits(SDX, 0x01);
-        HAL.writeBits(SCLK, 0x00);
+        HAL.setBits(SDX);
+        HAL.clrBits(SCLK);
         Time.sleep(1);
-        HAL.writeBits(SDX, 0x00);
+        HAL.clrBits(SDX);
+        Time.sleep(1);
     }
 }

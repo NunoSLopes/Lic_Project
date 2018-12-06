@@ -13,6 +13,11 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
     public static void main(String args[]) {
         LCD.init();
         LCD.write("Cambada de Burros");
+        Time.sleep(5000);
+        clear();
+        LCD.write("Continuam");
+        cursor(1,10);
+        LCD.write("Burros");
     }
 
     // Escreve um byte de comando/dados no LCD
