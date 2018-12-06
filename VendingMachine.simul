@@ -30,8 +30,8 @@ UsbPort.O0 -> kb.ACK
 kb.DAC -> kbd.ack
 
 # SERIAL
-UsbPort.O0 -> sr.SDX
-UsbPort.O1-> sr.SCLK
+UsbPort.O1 -> sr.SDX
+UsbPort.O0-> sr.SCLK
 dp.done -> sr.accept
 sr.busy -> UsbPort.I0
 
