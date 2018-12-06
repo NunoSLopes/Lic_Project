@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67b0d7b4-55f0-431f-b327-547baf4db8c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SerialEmitter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/SerialEmitterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/HAL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/HAL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LCD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LCD.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -15,6 +12,23 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-222819699">
@@ -59,57 +73,52 @@
     <session id="-9160321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.44" value="2" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="3" />
-          <entry key="java" value="10" />
+          <entry key="java" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="10" />
+          <entry key="JAVA" value="13" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="3090" />
-          <entry key="txt" value="27" />
+          <entry key="java" value="3484" />
+          <entry key="txt" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3090" />
-          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="JAVA" value="3484" />
+          <entry key="PLAIN_TEXT" value="46" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LCD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="462">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding>
-                <element signature="e#1277#1278#0" expanded="true" />
-                <element signature="e#1319#1320#0" expanded="true" />
-                <element signature="e#1396#1397#0" expanded="true" />
-                <element signature="e#1437#1438#0" expanded="true" />
-                <element signature="e#1972#1973#0" expanded="true" />
-                <element signature="e#2004#2005#0" expanded="true" />
-                <element signature="e#2517#2518#0" expanded="true" />
-                <element signature="e#2554#2555#0" expanded="true" />
+                <element signature="e#1238#1239#0" expanded="true" />
+                <element signature="e#1280#1281#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,45 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SerialEmitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-              <folding>
-                <element signature="e#1044#1045#0" expanded="true" />
-                <element signature="e#1082#1083#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/SerialEmitterTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HAL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/KBD.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -168,6 +140,7 @@
       <list>
         <option value="Class" />
         <option value="Arquillian JUnit Test Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -192,17 +165,22 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
-    <option name="width" value="981" />
-    <option name="height" value="1041" />
+    <option name="width" value="1302" />
+    <option name="height" value="1551" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -218,12 +196,13 @@
             </path>
             <path>
               <item name="Lic_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,7 +211,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542924271211" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542926360679" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -264,7 +243,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LCD">
+  <component name="RunManager" selected="JUnit.SerialEmitterTest">
     <configuration name="HAL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HAL" />
       <module name="Project" />
@@ -286,13 +265,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SerialEmitterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SerialEmitterTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SerialEmitterTest.send" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SerialEmitterTest" />
+      <option name="METHOD_NAME" value="send" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.HAL" />
       <item itemvalue="Application.KBD" />
       <item itemvalue="Application.LCD" />
+      <item itemvalue="JUnit.SerialEmitterTest" />
+      <item itemvalue="JUnit.SerialEmitterTest.send" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SerialEmitterTest" />
+        <item itemvalue="JUnit.SerialEmitterTest.send" />
         <item itemvalue="Application.LCD" />
         <item itemvalue="Application.KBD" />
         <item itemvalue="Application.HAL" />
@@ -318,7 +319,9 @@
       <workItem from="1541703936438" duration="10811000" />
       <workItem from="1542307598859" duration="6038000" />
       <workItem from="1542318503375" duration="597000" />
-      <workItem from="1542914360169" duration="7880000" />
+      <workItem from="1542914360169" duration="10144000" />
+      <workItem from="1543357515849" duration="373000" />
+      <workItem from="1544127405731" duration="549000" />
     </task>
     <task id="LOCAL-00001" summary="created LCD class">
       <created>1541704308338</created>
@@ -397,17 +400,44 @@
       <option name="project" value="LOCAL" />
       <updated>1542311945316</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add SerialEmitter">
+      <created>1542924330566</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1542924330566</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="SerialEmitterTest - 2018.11.22 at 22h 28m 13s.xml">
+      <configuration name="SerialEmitterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialEmitterTest - 2018.11.22 at 22h 28m 29s.xml">
+      <configuration name="SerialEmitterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialEmitterTest - 2018.11.22 at 22h 28m 50s.xml">
+      <configuration name="SerialEmitterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialEmitterTest_send - 2018.11.22 at 22h 31m 40s.xml">
+      <configuration name="SerialEmitterTest.send" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialEmitterTest_send - 2018.11.22 at 22h 32m 28s.xml">
+      <configuration name="SerialEmitterTest.send" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SerialEmitterTest - 2018.11.22 at 22h 37m 20s.xml">
+      <configuration name="SerialEmitterTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34104000" />
+    <option name="totallyTimeSpent" value="37290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="1041" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28055388" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28777844" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -427,14 +457,14 @@
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32893288" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24984948" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32992172" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32992172" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
@@ -476,7 +506,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created LCD class" />
     <MESSAGE value="updated LCD class" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated LCD class" />
+    <MESSAGE value="add SerialEmitter" />
+    <option name="LAST_COMMIT_MESSAGE" value="add SerialEmitter" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
@@ -543,9 +578,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/HAL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/KBD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="-220">
           <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -553,47 +598,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HAL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/SerialEmitterTest.java" />
     <entry file="file://$PROJECT_DIR$/src/SerialEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding>
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1082#1083#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/SerialEmitterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="220">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LCD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state relative-caret-position="462">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2004#2005#0" expanded="true" />
-            <element signature="e#2517#2518#0" expanded="true" />
-            <element signature="e#2554#2555#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1280#1281#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -675,7 +694,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>usbport</last-edited>
+          <last-edited>org.powermock:powermock-module-junit4:1.6.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
