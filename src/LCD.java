@@ -24,7 +24,6 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
     private static void writeByte(boolean rs, int data) {
         //HAL.writeBits(RS, rs ? RS : 0);
         data = (data << 1) + (rs ? 1 : 0);
-        data = (data << 1) + 1;
         SerialEmitter.send(
                 SerialEmitter.Destination.LCD,
                 data);//LCD.writeNSR(data);
