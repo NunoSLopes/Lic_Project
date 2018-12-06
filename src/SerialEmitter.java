@@ -64,6 +64,7 @@ public class SerialEmitter {
     private static void start() {
         HAL.writeBits(SDX, 0x01);
         HAL.writeBits(SCLK, 0x00);
+        Time.sleep(1);
         HAL.writeBits(SDX, 0x00);
     }
 }
