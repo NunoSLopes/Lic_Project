@@ -2,7 +2,7 @@ import isel.leic.utils.Time;
 
 public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
-    private static final int LINES = 2, COLS = 16;// Dimensão do display.
+    public static final int LINES = 2, COLS = 16;// Dimensão do display.
 
     //private static final int ENABLE = 0x40;
     //private static final int RS = 0x20;
@@ -33,7 +33,7 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
         //HAL.writeBits(ENABLE, 0xff);
         //HAL.writeBits(ENABLE, 0);
 
-        Time.sleep(1);
+        //Time.sleep(1);
     }
 
     /*private static void writeNSR(int data) {
@@ -57,11 +57,11 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     // Envia a sequência de iniciação para comunicação a 8 bits.
     public static void init() {
-        Time.sleep(15);
+        //Time.sleep(15);
         LCD.writeCMD(0x30);
-        Time.sleep(5);
+        //Time.sleep(5);
         LCD.writeCMD(0x30);
-        Time.sleep(1);
+        //Time.sleep(1);
         LCD.writeCMD(0x30);
         LCD.writeCMD(0x38);
         LCD.writeCMD(0x08);

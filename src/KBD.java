@@ -16,8 +16,8 @@ public class KBD {
 
             if(key != NONE)
                 System.out.println(key);
-            else
-                HAL.clrBits(ack);
+            //else
+                //HAL.clrBits(ack);
 
             if(key == '*')
                 break;
@@ -26,6 +26,7 @@ public class KBD {
 
 
     }
+
     private static final char[] chars = {
             '1', '4', '7', '*',
             '2', '5', '8', '0',
@@ -42,7 +43,9 @@ public class KBD {
 
         if (!HAL.isBit(Kval)) return NONE;
         HAL.setBits(ack);
-        return chars[HAL.readBits(keys)];
+        key =  chars[HAL.readBits(keys)];
+        HAL.clrBits(ack);
+        return key;
     }
 
     public static char waitKey ( long timeout) {
@@ -54,7 +57,7 @@ public class KBD {
         }
         return NONE;
     }
-    }
+}
 
 
 
