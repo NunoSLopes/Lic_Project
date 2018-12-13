@@ -1,8 +1,5 @@
-import java.util.List;
-
 public class TUI {
 
-    private static List<Product> products;
 
     public static void init() {
         LCD.init();
@@ -33,17 +30,7 @@ public class TUI {
     }
 
 
-    public static void showProduct(int key) {
-        Product product = null;
-        for (Product result : products) {
-            if (result.getId() == key ) product = result;
-        }
-
-        if (product == null) {
-            return;
-        }
-        System.out.println(key);
-
+    public static void showProduct(Product product) {
         LCD.clear();
 
         int centerText = (LCD.COLS - product.getName().length())/2;
@@ -51,7 +38,7 @@ public class TUI {
         LCD.cursor(0, centerText);
         LCD.write( product.getName());
         LCD.cursor(1,0);
-        LCD.write(product.getId() > 10 ? "" + product.getId() : "0" + product.getId());
+        LCD.write(String.format("%02d", product.getId() ));
         LCD.cursor(1,6);
         LCD.write("#"+product.getQuantity());
         LCD.cursor(1,12);

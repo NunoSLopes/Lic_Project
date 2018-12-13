@@ -1,31 +1,9 @@
-import isel.leic.utils.Time;
-
 public class KBD {
 
     public static final char NONE = 0;
     private static final int keys = 0x0F;
-    private static final int Kval = 0x10;
-    private static final int ack = 0x01;
-
-    public static void main(String[] args) {
-        init();
-        for(;;){
-            char key = getKey();
-
-            Time.sleep(10);
-
-            if(key != NONE)
-                System.out.println(key);
-            //else
-                //HAL.clrBits(ack);
-
-            if(key == '*')
-                break;
-        }
-
-
-
-    }
+    private static final int Dval = 0x10;
+    private static final int ack = 0x04;
 
     private static final char[] chars = {
             '1', '4', '7', '*',
@@ -41,9 +19,10 @@ public class KBD {
     public static char getKey(){
         char key = NONE;
 
-        if (!HAL.isBit(Kval)) return NONE;
+        if (!HAL.isBit(Dval)) return NONE;
         HAL.setBits(ack);
         key =  chars[HAL.readBits(keys)];
+        while(HAL.isBit(Dval));
         HAL.clrBits(ack);
         return key;
     }

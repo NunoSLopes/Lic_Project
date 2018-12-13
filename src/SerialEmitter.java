@@ -5,7 +5,7 @@ public class SerialEmitter {
 
     private static int SDX = 0x02;  //inport
     private static int SCLK = 0x01; //inport
-    private static int BUSY = 0x01; //outport
+    private static int BUSY = 0x40; //outport
 
     public enum Destination {
         Dispenser,

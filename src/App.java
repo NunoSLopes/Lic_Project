@@ -5,10 +5,11 @@ import java.util.List;
 public class App {
 
     private static String date;
+    private static List<Product> products;
 
     public static void main(String[] args) {
 
-        List<Product> products = ProductService.getProducts();
+        products = ProductService.getProducts();
 
 
         TUI.init();
@@ -38,10 +39,37 @@ public class App {
     private static void showMMode() {
         TUI.showM();
         while (M.isActive()) {
-
+            char key = TUI.getKey();
+            switch (key) {
+                case '1':
+                    mLoad();break;
+                case '2':
+                    //mRemove();break;
+                case '3':
+                    //mExit();break;
+                default: //do nothing
+            }
         }
         TUI.startMenu(date);
     }
+
+    private static void mLoad() {
+        String keys = new String("00");
+        for (; ; ) {
+            System.out.println(keys);
+            int pos = Integer.parseInt(keys.substring(keys.length()-2, keys.length()));
+            TUI.showProduct( products.get(pos > products.get(products.size()-1).getId() ? pos%10 : pos ));
+            char key_char;
+            do {
+                key_char = TUI.getKey();
+
+                if (key_char >= '0' && key_char <= '9')
+                    keys += key_char;
+            } while(key_char < '0' || key_char > '9');
+            //selectManProduct();
+        }
+    }
+
 
     private static void showProducts() {
         //TUI.showProduct();

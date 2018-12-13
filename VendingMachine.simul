@@ -26,14 +26,14 @@ kbd.K[0-3] -> kb.D[0-3]
 kb.K[0-3] -> UsbPort.I[0-3]
 kbd.val -> kb.DAV
 kb.Dval -> UsbPort.I4
-UsbPort.O0 -> kb.ACK
+UsbPort.O2 -> kb.ACK
 kb.DAC -> kbd.ack
 
 # SERIAL
 UsbPort.O1 -> sr.SDX
 UsbPort.O0-> sr.SCLK
 dp.done -> sr.accept
-sr.busy -> UsbPort.I0
+sr.busy -> UsbPort.I6
 
 # LCD
 dp.D[1-8] -> lcd.D[0-7]
