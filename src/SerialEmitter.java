@@ -28,7 +28,7 @@ public class SerialEmitter {
 
     // Envia uma trama para o SerialReceiver identificado o destino em addr e os bits de dados em ‘data’.
     public static void send(Destination addr, int data) {
-        //while (isBusy());
+        while (isBusy());
         start();
         int size = (addr == Destination.Dispenser ? 6 : 11 );
         int parity = 0;
@@ -49,9 +49,9 @@ public class SerialEmitter {
                 parity++;
             }
             else HAL.clrBits(SDX);
-            Time.sleep(1);
+            //Time.sleep(1);
             HAL.clrBits(SCLK);
-            Time.sleep(1);
+            //Time.sleep(1);
             HAL.setBits(SCLK);
         }
 

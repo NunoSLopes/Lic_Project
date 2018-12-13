@@ -4,10 +4,6 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     public static final int LINES = 2, COLS = 16;// Dimensão do display.
 
-    //private static final int ENABLE = 0x40;
-    //private static final int RS = 0x20;
-    //private static final int SHIFT = 0x10;
-    //private static final int LSB = 0x0F;
     private static final int CLR_DISPLAY = 0x01;
 
     public static void main(String args[]) {
@@ -24,26 +20,11 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     // Escreve um byte de comando/dados no LCD
     private static void writeByte(boolean rs, int data) {
-        //HAL.writeBits(RS, rs ? RS : 0);
         data = (data << 1) + (rs ? 1 : 0);
         SerialEmitter.send(
                 SerialEmitter.Destination.LCD,
-                data);//LCD.writeNSR(data);
-
-        //HAL.writeBits(ENABLE, 0xff);
-        //HAL.writeBits(ENABLE, 0);
-
-        //Time.sleep(1);
+                data);
     }
-
-    /*private static void writeNSR(int data) {
-        HAL.writeBits(LSB, data>>4);
-        HAL.setBits(SHIFT);
-        HAL.clrBits(SHIFT);
-        HAL.writeBits(LSB, data);
-        HAL.setBits(SHIFT);
-        HAL.clrBits(SHIFT);
-    }*/
 
     // Escreve um comando no LCD
     private static void writeCMD(int data) {
