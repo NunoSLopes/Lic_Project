@@ -1,3 +1,5 @@
+import isel.leic.utils.Time;
+
 public class TUI {
 
 
@@ -31,20 +33,27 @@ public class TUI {
 
 
     public static void showProduct(Product product) {
-        LCD.clear();
+        showTopMessage(product.getName(), true);
 
-        int centerText = (LCD.COLS - product.getName().length())/2;
-
-        LCD.cursor(0, centerText);
-        LCD.write( product.getName());
         LCD.cursor(1,0);
-        LCD.write(String.format("%02d", product.getId() ));
+        LCD.write(String.format("%02d", product.getId() ) + ":");
+
         LCD.cursor(1,6);
-        LCD.write("#"+product.getQuantity());
+        LCD.write(String.format("%02d", product.getQuantity() ));
+
         LCD.cursor(1,12);
-        LCD.write((product.getQuantity()*0.10) + "E");
+        LCD.write( String.format("%.1f", product.getValue() ) + "E" );
 
         LCD.cursor(1,1);
+    }
+
+    public static void showFinalProduct(Product product, double coins) {
+        showTopMessage(product.getName(), true);
+        LCD.cursor(1,0);
+
+        LCD.cursor(1,6);
+        LCD.write(String.format("%.1f", product.getValue() - (coins/10) ) + "E");
+        LCD.cursor(1,17); //hide cursor
     }
 
     public static void showM() {
@@ -52,5 +61,30 @@ public class TUI {
         LCD.write("Maintenance Mode");
         LCD.cursor(1,0);
         LCD.write("1-Ld 2-Rm 3-Off");
+    }
+
+    public static void showTopMessage(String message, boolean clear) {
+        if (clear) LCD.clear();
+
+        int centerText = (LCD.COLS - message.length())/2;
+
+        LCD.cursor(0, centerText);
+        LCD.write( message);
+    }
+
+    public static void showBottomMessage(String message, boolean clear) {
+        if (clear) LCD.clear();
+
+        int centerText = (LCD.COLS - message.length())/2;
+
+        LCD.cursor(1, centerText);
+        LCD.write( message);
+    }
+
+    public static void showTemporaryMessage(String message, int time, boolean top) {
+        LCD.clear();
+        if (top) showTopMessage(message, true);
+        else showBottomMessage(message, false);
+        Time.sleep(time);
     }
 }

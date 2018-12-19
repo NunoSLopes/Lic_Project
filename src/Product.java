@@ -3,7 +3,7 @@ public class Product {
     private int id;
     private String name;
     private int quantity;
-    private int value;
+    private double value;
 
     public Product(String stringToParse) {
         this.parser(stringToParse);
@@ -33,11 +33,11 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(double value) {
         this.value = value;
     }
 
@@ -46,7 +46,7 @@ public class Product {
         this.id = Integer.parseInt(split[0]);
         this.name = split[1];
         this.quantity = Integer.parseInt(split[2]);
-        this.value = Integer.parseInt(split[3]);
+        this.value = Integer.parseInt(split[3]) * 0.10;
     }
 
     @Override
