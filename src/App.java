@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -49,21 +50,92 @@ public class App {
                 case '1':
                     mLoad();break;
                 case '2':
-                    //mRemove();break;
+                    mRemove();break;
                 case '3':
-                    //mExit();break;
+                    mExit();break;
                 default: //do nothing
             }
         }
         TUI.startMenu(date);
     }
 
-    private static void mLoad() {
+    private static void mExit() {
+        TUI.showTopMessage("Shutdown?", true);
+        TUI.showBottomMessage("5-Yes other-No", false);
+        boolean exit = false;
+        do {
+            int key = TUI.getKey();
+            if (key != KBD.NONE) {
+                if (key == '5') {
+                    try {
+                        ProductService.updateFile();
+                        TUI.turnOff();
+                        while(true);
+                    } catch (IOException e) {
+                        TUI.showBottomMessage("ERROR FATAL!", true);
+                    }
+                }
+                exit = true;
+            }
+        } while (!exit);
+    }
+
+    private static void mRemove() {
         int selected = menu();
-        //selectManProduct();
+        manConfirmDelete(selected);
         TUI.showM();
     }
 
+    private static void manConfirmDelete(int selected) {
+        TUI.showBottomMessage("5-Yes other-No", true);
+        boolean exit = false;
+        do {
+            int key = TUI.getKey();
+            if (key != KBD.NONE) {
+                if (key == '5') products.remove(selected);
+                exit = true;
+            }
+        } while (!exit);
+    }
+
+    private static void mLoad() {
+        int selected = menu();
+        selectManProduct(selected);
+        TUI.showM();
+    }
+
+    private static void selectManProduct(int selected) {
+        boolean exit = false;
+        Product product = products.get(selected);
+        TUI.changeProduct( product , "" );
+        String value = "";
+        do {
+            int key = Character.getNumericValue(TUI.getKey());
+
+            if (key != -1) {
+                value += key;
+                TUI.changeProduct(products.get(selected), value);
+            }
+
+            if (value.length() > 1) {
+                manConfirmChanges(product , Integer.parseInt(value) );
+                exit = true;
+            }
+        } while (!exit);
+    }
+
+    private static void manConfirmChanges(Product product, int value) {
+        TUI.showTopMessage(value + " " + product.getName(), true);
+        TUI.showBottomMessage("5-Yes other-No", false);
+        boolean exit = false;
+        do {
+            int key = TUI.getKey();
+            if (key != KBD.NONE) {
+                if (key == '5') product.setQuantity(value);
+                exit = true;
+            }
+        } while (!exit);
+    }
 
     private static void showProducts() {
         char key = 0;
@@ -74,9 +146,10 @@ public class App {
         do {
             key = TUI.getKey();
             if (key == '#'){
+                String mariquicesDoMiguel = coins == 1 ? "coin" : "coins";
                 CoinAcceptor.ejectCoins();
                 TUI.showTemporaryMessage("Canceled", 1000, true);
-                TUI.showTemporaryMessage(coins + "ejected", 1000, false);
+                TUI.showTemporaryMessage((int)coins + " " + mariquicesDoMiguel +" ejected", 1000, false);
             }
 
             if (CoinAcceptor.hasCoin()) {

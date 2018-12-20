@@ -39,12 +39,29 @@ public class TUI {
         LCD.write(String.format("%02d", product.getId() ) + ":");
 
         LCD.cursor(1,6);
-        LCD.write(String.format("%02d", product.getQuantity() ));
+        LCD.write("#" + String.format("%02d", product.getQuantity() ));
 
         LCD.cursor(1,12);
         LCD.write( String.format("%.1f", product.getValue() ) + "E" );
 
         LCD.cursor(1,1);
+    }
+
+    public static void changeProduct(Product product, String value) {
+        showTopMessage(product.getName(), true);
+
+        LCD.cursor(1,0);
+        LCD.write(String.format("%02d", product.getId() ) + ":");
+
+        LCD.cursor(1,6);
+        if (value.length() == 0) LCD.write("#??");
+        else if (value.length() == 1) LCD.write("#?" + value);
+        else LCD.write("#" + value);
+
+        LCD.cursor(1,12);
+        LCD.write( String.format("%.1f", product.getValue() ) + "E" );
+
+        LCD.cursor(1,7);
     }
 
     public static void showFinalProduct(Product product, double coins) {
@@ -86,5 +103,13 @@ public class TUI {
         if (top) showTopMessage(message, true);
         else showBottomMessage(message, false);
         Time.sleep(time);
+    }
+
+    public static void turnOff() {
+        LCD.clear();
+        LCD.cursor(0,0);
+        for(int i = 0; i <16; i++ ) {
+            LCD.write((char)255);
+        }
     }
 }

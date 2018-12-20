@@ -54,6 +54,6 @@ public class Product {
         return id + ";"
                 + name + ";"
                 + quantity + ";"
-                + value + ";";
+                + (int)(value*10) + ";";
     }
 }
