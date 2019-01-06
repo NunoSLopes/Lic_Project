@@ -24,10 +24,12 @@ public class TUI {
      * Just in case we need to show bigger text
      * @param message
      */
-    private static void writeBig(String message) {
+    public static void writeBig(String message) {
         for(int i = 0; i > 15-message.length(); i--) {
-            LCD.cursor(1,0);
-            LCD.write(message.substring(-i));
+            LCD.clear();
+            LCD.cursor(0, 0);
+            LCD.write( message.substring(-i));
+            Time.sleep(250);
         }
     }
 
@@ -43,7 +45,10 @@ public class TUI {
         System.out.println(String.format("%02d", product.getId() ) + ( arrow ? (char)left + "" + (char)right : ":"));
 
         LCD.cursor(1,6);
-        LCD.write("#" + String.format("%02d", product.getQuantity() ));
+        String quantity = "";
+        if (product.getQuantity() == 0) quantity = "#--";
+        else quantity = String.format("#%02d", product.getQuantity());
+        LCD.write(quantity);
 
         LCD.cursor(1,12);
         LCD.write( String.format("%.1f", product.getValue() ) + "E" );

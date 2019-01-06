@@ -136,7 +136,7 @@ public class App {
             }
 
             if (value.length() > 1) {
-                manConfirmChanges(product , Integer.parseInt(value) );
+                manConfirmChanges(product , Integer.parseInt(value) > 20 ? 20 : Integer.parseInt(value) );
                 exit = true;
             }
         } while (!exit);
@@ -163,7 +163,9 @@ public class App {
         Product sel = products.get(selected);
         TUI.showFinalProduct(sel, coins);
         boolean coinAccepted = false;
-        do {
+        if (sel.getQuantity() == 0) {
+            TUI.writeBig("Sorry, stock is not available.");
+        } else do {
             key = TUI.getKey();
             if (key == '#'){
                 String mariquicesDoMiguel = coins == 1 ? "coin" : "coins";
@@ -181,7 +183,7 @@ public class App {
                 coinAccepted = true;
                 coins++;
                 TUI.showFinalProduct(sel, coins);
-                if (coins/10 == sel.getValue()) {
+                if (coins/10 - sel.getValue() > -0.09) {
                     whaitForDisposal(sel);
                     key = '#';
                 }
