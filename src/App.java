@@ -214,6 +214,7 @@ public class App {
             do {
                 key_char = TUI.getKey();
 
+                if (key_char != KBD.NONE) inicialDate = getCurrentDateTime();
 
                 if (arrow) {
                     if (key_char == '*') {
@@ -221,10 +222,10 @@ public class App {
                         TUI.showProduct( products.get(checkedPosition ), arrow);
                     }
                     String pos = "";
-                    if (key_char == '8') {
+                    if (key_char == '6') {
                         pos = pos1 + 1 > products.get(products.size()-1).getId() ? "00" : String.format("%02d", ++pos1);
                     }
-                    if (key_char == '2') {
+                    if (key_char == '4') {
                         pos = pos1 - 1 < 0 ? String.format("#%02d", products.get(products.size()-1).getId()) : String.format("%02d", --pos1);
                     }
                     keys += pos;

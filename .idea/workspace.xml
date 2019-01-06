@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simul.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Simul.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,34 +41,42 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="85">
+              <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CoinAcceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="33" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dispenser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="16" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="166" column="20" lean-forward="true" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="20" />
+            <state relative-caret-position="279">
+              <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#App#0" />
-                <element signature="method#calc5Sec#0;class#App#0" />
-                <element signature="method#calcTime#0;class#App#0" />
-                <element signature="method#showMMode#0;class#App#0" />
-                <element signature="method#mExit#0;class#App#0" />
-                <element signature="method#mRemove#0;class#App#0" />
-                <element signature="method#manConfirmDelete#0;class#App#0" />
-                <element signature="method#mLoad#0;class#App#0" />
-                <element signature="method#selectManProduct#0;class#App#0" />
-                <element signature="method#manConfirmChanges#0;class#App#0" />
-                <element signature="method#whaitForDisposal#0;class#App#0" />
-                <element signature="method#menu#0;class#App#0" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#1049#1050#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,15 +105,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoinAcceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -163,8 +161,8 @@
         <option value="$PROJECT_DIR$/src/CoinAcceptor.java" />
         <option value="$PROJECT_DIR$/PRODUCTS.txt" />
         <option value="$PROJECT_DIR$/src/Product.java" />
-        <option value="$PROJECT_DIR$/src/App.java" />
         <option value="$PROJECT_DIR$/src/TUI.java" />
+        <option value="$PROJECT_DIR$/src/App.java" />
       </list>
     </option>
   </component>
@@ -235,7 +233,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546792775946" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546799220644" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -352,7 +350,7 @@
       <workItem from="1544177425011" duration="14234000" />
       <workItem from="1544726237569" duration="14868000" />
       <workItem from="1545231733206" duration="6000" />
-      <workItem from="1546771867651" duration="15740000" />
+      <workItem from="1546771867651" duration="18710000" />
     </task>
     <task id="LOCAL-00001" summary="created LCD class">
       <created>1541704308338</created>
@@ -487,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546782586096</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="almost finished">
+      <created>1546793069617</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1546793069617</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -514,7 +519,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92013000" />
+    <option name="totallyTimeSpent" value="94983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -604,9 +609,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/src/App.java</url>
-          <line>117</line>
+          <line>34</line>
           <properties />
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-defaults>
@@ -705,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dispenser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SerialEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -784,37 +782,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CoinAcceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state>
+          <caret selection-end-line="33" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.java">
+    <entry file="file://$PROJECT_DIR$/src/Dispenser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="166" column="20" lean-forward="true" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#App#0" />
-            <element signature="method#calc5Sec#0;class#App#0" />
-            <element signature="method#calcTime#0;class#App#0" />
-            <element signature="method#showMMode#0;class#App#0" />
-            <element signature="method#mExit#0;class#App#0" />
-            <element signature="method#mRemove#0;class#App#0" />
-            <element signature="method#manConfirmDelete#0;class#App#0" />
-            <element signature="method#mLoad#0;class#App#0" />
-            <element signature="method#selectManProduct#0;class#App#0" />
-            <element signature="method#manConfirmChanges#0;class#App#0" />
-            <element signature="method#whaitForDisposal#0;class#App#0" />
-            <element signature="method#menu#0;class#App#0" />
-          </folding>
+        <state>
+          <caret selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="85">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#1049#1050#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
