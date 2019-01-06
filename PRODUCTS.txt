@@ -12,4 +12,4 @@
 11;Milka;4;14;
 12;Crunch;5;1;
 13;Ferrero Rocher;5;6;
-15;Kinder;20;5;
+14;Kinder;20;5;

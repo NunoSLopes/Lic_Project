@@ -34,7 +34,6 @@ public class App {
     private static boolean calc5Sec(LocalDateTime prevDate) {
         LocalDateTime date = getCurrentDateTime();
         int dif = date.getSecond() - prevDate.getSecond();
-        System.out.println(dif);
         return dif >= 5 || dif <= -55;
     }
 
@@ -72,6 +71,7 @@ public class App {
     }
 
     private static void mExit() {
+        LocalDateTime inicialDate = getCurrentDateTime();
         TUI.showTopMessage("Shutdown?", true);
         TUI.showBottomMessage("5-Yes other-No", false);
         boolean exit = false;
@@ -89,12 +89,16 @@ public class App {
                 }
                 exit = true;
             }
+            if (calc5Sec(inicialDate)) break;
         } while (!exit);
+        TUI.showM();
     }
 
     private static void mRemove() {
         int selected = menu();
-        manConfirmDelete(selected);
+        if ( selected != TIME_OUT) {
+            manConfirmDelete(selected);
+        }
         TUI.showM();
     }
 
@@ -112,7 +116,9 @@ public class App {
 
     private static void mLoad() {
         int selected = menu();
-        selectManProduct(selected);
+        if ( selected != TIME_OUT) {
+            selectManProduct(selected);
+        }
         TUI.showM();
     }
 
@@ -153,9 +159,7 @@ public class App {
         char key = 0;
         double coins = 0;
         int selected = menu();
-        if (selected == TIME_OUT) {
-            return;
-        }
+        if (selected == TIME_OUT) return;
         Product sel = products.get(selected);
         TUI.showFinalProduct(sel, coins);
         boolean coinAccepted = false;
