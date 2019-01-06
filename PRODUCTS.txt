@@ -1,5 +1,5 @@
-0;Toblerone;14;8;
-1;KitKat;6;9;
+0;Toblerone;12;8;
+1;KitKat;14;9;
 2;ToffeCrisp;13;9;
 3;Snickers;14;10;
 4;Maltesers;15;11;
@@ -12,5 +12,4 @@
 11;Milka;4;14;
 12;Crunch;5;1;
 13;Ferrero Rocher;5;6;
-14;Mon Cheri;3;5;
 15;Kinder;20;5;

@@ -6,6 +6,7 @@ import java.util.List;
 public class App {
 
     private static String date;
+    private static final int TIME_OUT = 0xFF;
     private static List<Product> products;
 
     public static void main(String[] args) {
@@ -15,7 +16,7 @@ public class App {
         TUI.init();
 
         for(;;) {
-            if ( calcTime() )
+            if ( calcDateTime() )
                 TUI.startMenu(date);
             int key = TUI.getKey();
             if (key == '#') {
@@ -30,7 +31,18 @@ public class App {
 
     }
 
-    private static boolean calcTime() {
+    private static boolean calc5Sec(LocalDateTime prevDate) {
+        LocalDateTime date = getCurrentDateTime();
+        int dif = date.getSecond() - prevDate.getSecond();
+        System.out.println(dif);
+        return dif >= 5 || dif <= -55;
+    }
+
+    private static LocalDateTime getCurrentDateTime() {
+        return LocalDateTime.now();
+    }
+
+    private static boolean calcDateTime() {
         if (date == null) {
             date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
             return true;
@@ -141,8 +153,12 @@ public class App {
         char key = 0;
         double coins = 0;
         int selected = menu();
+        if (selected == TIME_OUT) {
+            return;
+        }
         Product sel = products.get(selected);
         TUI.showFinalProduct(sel, coins);
+        boolean coinAccepted = false;
         do {
             key = TUI.getKey();
             if (key == '#'){
@@ -152,8 +168,13 @@ public class App {
                 TUI.showTemporaryMessage((int)coins + " " + mariquicesDoMiguel +" ejected", 1000, false);
             }
 
-            if (CoinAcceptor.hasCoin()) {
+            if (!CoinAcceptor.hasCoin()) {
+                coinAccepted = false;
+            }
+
+            if (CoinAcceptor.hasCoin() && !coinAccepted) {
                 CoinAcceptor.acceptCoin();
+                coinAccepted = true;
                 coins++;
                 TUI.showFinalProduct(sel, coins);
                 if (coins/10 == sel.getValue()) {
@@ -174,20 +195,47 @@ public class App {
     }
 
     private static int menu() {
+        LocalDateTime inicialDate = getCurrentDateTime();
         int selected = 0;
         String keys = new String("00");
+        boolean arrow = false;
         for (; ; ) {
+            inicialDate = getCurrentDateTime();
             int pos1 = Integer.parseInt(keys.substring(keys.length()-2, keys.length()));
             int checkedPosition = pos1 > products.get(products.size()-1).getId() ? pos1%10 : pos1;
-            TUI.showProduct( products.get(checkedPosition ));
-            char key_char;
+            TUI.showProduct( products.get(checkedPosition ), arrow);
+            char key_char = 0;
             do {
                 key_char = TUI.getKey();
+
+
+                if (arrow) {
+                    if (key_char == '*') {
+                        arrow = false;
+                        TUI.showProduct( products.get(checkedPosition ), arrow);
+                    }
+                    String pos = "";
+                    if (key_char == '8') {
+                        pos = pos1 + 1 > products.get(products.size()-1).getId() ? "00" : String.format("%02d", ++pos1);
+                    }
+                    if (key_char == '2') {
+                        pos = pos1 - 1 < 0 ? String.format("#%02d", products.get(products.size()-1).getId()) : String.format("%02d", --pos1);
+                    }
+                    keys += pos;
+
+                } else {
+                    if (key_char == '*') {
+                        arrow = true;
+                        TUI.showProduct( products.get(checkedPosition ), arrow);
+                    }
+
+                    if (key_char >= '0' && key_char <= '9')
+                        keys += key_char;
+                }
                 if (key_char == '#') break;
-
-                if (key_char >= '0' && key_char <= '9')
-                    keys += key_char;
-
+                if (calc5Sec(inicialDate)) {
+                    return TIME_OUT;
+                }
             } while(key_char < '0' || key_char > '9');
             if (key_char == '#') {
                 selected = checkedPosition;

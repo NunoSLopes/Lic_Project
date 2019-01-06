@@ -32,11 +32,15 @@ public class TUI {
     }
 
 
-    public static void showProduct(Product product) {
+    public static void showProduct(Product product, boolean arrow) {
         showTopMessage(product.getName(), true);
 
+        char right = 126;
+        char left = 127;
+
         LCD.cursor(1,0);
-        LCD.write(String.format("%02d", product.getId() ) + ":");
+        LCD.write(String.format("%02d", product.getId() ) + ( arrow ? (char)left + "" + (char)right : ":"));
+        System.out.println(String.format("%02d", product.getId() ) + ( arrow ? (char)left + "" + (char)right : ":"));
 
         LCD.cursor(1,6);
         LCD.write("#" + String.format("%02d", product.getQuantity() ));
@@ -44,7 +48,7 @@ public class TUI {
         LCD.cursor(1,12);
         LCD.write( String.format("%.1f", product.getValue() ) + "E" );
 
-        LCD.cursor(1,1);
+        if (!arrow) LCD.cursor(1,1);
     }
 
     public static void changeProduct(Product product, String value) {
