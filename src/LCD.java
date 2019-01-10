@@ -1,5 +1,3 @@
-import isel.leic.utils.Time;
-
 public class LCD { // Escreve no LCD usando a interface a 4 bits.
 
     public static final int LINES = 2, COLS = 16;// Dimensão do display.
@@ -10,12 +8,13 @@ public class LCD { // Escreve no LCD usando a interface a 4 bits.
         HAL.init();
         SerialEmitter.init();
         LCD.init();
-        LCD.write("Cambada de Burros");
+        /*LCD.write("Cambada de Burros");
         Time.sleep(5000);
         clear();
         LCD.write("Continuam");
         cursor(1,10);
-        LCD.write("Burros");
+        LCD.write("Burros");*/
+        LCD.writeDATA(0x18);
     }
 
     // Escreve um byte de comando/dados no LCD

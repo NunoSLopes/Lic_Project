@@ -34,10 +34,14 @@ public class SerialEmitter {
         int parity = 0;
 
 
-        if (addr == Destination.Dispenser)  HAL.clrBits(SDX);
+        if (addr == Destination.Dispenser)  {
+            HAL.clrBits(SDX);
+            System.out.print('0');
+        }
         else  {
             ++parity;
             HAL.setBits(SDX);
+            System.out.print('1');
         }
 
         HAL.setBits(SCLK);
@@ -46,18 +50,26 @@ public class SerialEmitter {
             int bit = data & (0x01<<i);
             if(bit>0 ) {
                 HAL.setBits(SDX);
+                System.out.print('1');
                 parity++;
             }
-            else HAL.clrBits(SDX);
+            else {
+                HAL.clrBits(SDX);
+                System.out.print('0');
+            }
             //Time.sleep(1);
             HAL.clrBits(SCLK);
             //Time.sleep(1);
             HAL.setBits(SCLK);
         }
 
-        if (parity % 2 != 0) HAL.clrBits(SDX);
+        if (parity % 2 != 0) {
+            HAL.clrBits(SDX);
+            System.out.println('0');
+        }
         else {
             HAL.setBits(SDX);
+            System.out.println('1');
         }
 
         Time.sleep(1);

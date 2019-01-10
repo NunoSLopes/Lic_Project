@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="VendingMachine" level="project" />
+    <orderEntry type="library" name="VendingMachine(1)" level="project" />
   </component>
 </module>
